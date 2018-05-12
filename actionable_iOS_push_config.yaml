@@ -1,0 +1,21 @@
+ios:
+  push:
+    categories:
+      - name: Alarm
+        identifier: 'alarm'
+        actions:
+          - identifier: 'SILENCE_ALARM'
+            title: 'Silence Alarm'
+            activationMode: 'background'
+            authenticationRequired: no
+            destructive: yes
+            behavior: 'default'
+      - name: Siren
+        identifier: 'siren'
+        actions:
+          - identifier: 'ACTIVATE_SIRENS'
+            title: 'Activate Sirens'
+            activationMode: 'background'
+            authenticationRequired: no
+            destructive: yes
+            behavior: 'default'  

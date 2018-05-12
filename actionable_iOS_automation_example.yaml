@@ -1,0 +1,18 @@
+automation old:
+  - alias: Front Door Notify
+    trigger:
+      platform: mqtt
+      topic: notify
+      payload: 'on2'
+    action:
+      service: notify.ios_robs_iphone
+      data:
+        message: "Front Door Open!"
+        data:
+          push:
+            badge: 5
+            category: "siren"
+          attachment:
+            url: 'https://Fake_HA_Server.duckdns.org:8123/api/camera_proxy/camera.front_door?api_password=notMyPassword'
+            content-type: jpeg
+            hide-thumbnail: false
