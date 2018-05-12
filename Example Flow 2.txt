@@ -1,0 +1,644 @@
+[
+    {
+        "id": "2fd6bcf8.a934f4",
+        "type": "change",
+        "z": "c98c2f87.1a57",
+        "name": "Family Room Window Open",
+        "rules": [
+            {
+                "t": "set",
+                "p": "windowName",
+                "pt": "msg",
+                "to": "Family Room Window Open",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "image",
+                "pt": "msg",
+                "to": "https://Fake_HA_Server.duckdns.org:8123/api/camera_proxy/camera.sliding_door?api_password=notMyPassword",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 760,
+        "y": 100,
+        "wires": [
+            [
+                "72f37449.6ab70c"
+            ]
+        ]
+    },
+    {
+        "id": "75bd66dd.07e288",
+        "type": "change",
+        "z": "c98c2f87.1a57",
+        "name": "Family Room Window Open",
+        "rules": [
+            {
+                "t": "set",
+                "p": "windowName",
+                "pt": "msg",
+                "to": "Family Room Window Open",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "image",
+                "pt": "msg",
+                "to": "https://Fake_HA_Server.duckdns.org:8123/api/camera_proxy/camera.hittel_gate?api_password=notMyPassword",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 760,
+        "y": 220,
+        "wires": [
+            [
+                "72f37449.6ab70c"
+            ]
+        ]
+    },
+    {
+        "id": "d4b58d21.21339",
+        "type": "change",
+        "z": "c98c2f87.1a57",
+        "name": "Playroom Window Open",
+        "rules": [
+            {
+                "t": "set",
+                "p": "windowName",
+                "pt": "msg",
+                "to": "Playroom Window Open",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "image",
+                "pt": "msg",
+                "to": "https://Fake_HA_Server.duckdns.org:8123/api/camera_proxy/camera.hittel_gate?api_password=notMyPassword",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 750,
+        "y": 280,
+        "wires": [
+            [
+                "72f37449.6ab70c"
+            ]
+        ]
+    },
+    {
+        "id": "faa7e302.a82ca",
+        "type": "change",
+        "z": "c98c2f87.1a57",
+        "name": "Kitchen Window Open",
+        "rules": [
+            {
+                "t": "set",
+                "p": "windowName",
+                "pt": "msg",
+                "to": "Kitchen Window Open",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "image",
+                "pt": "msg",
+                "to": "https://Fake_HA_Server.duckdns.org:8123/api/camera_proxy/camera.sliding_door?api_password=notMyPassword",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 740,
+        "y": 340,
+        "wires": [
+            [
+                "72f37449.6ab70c"
+            ]
+        ]
+    },
+    {
+        "id": "5d8fa667.c98288",
+        "type": "change",
+        "z": "c98c2f87.1a57",
+        "name": "Dining Room Window Open",
+        "rules": [
+            {
+                "t": "set",
+                "p": "windowName",
+                "pt": "msg",
+                "to": "Dining Room Window Open",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "image",
+                "pt": "msg",
+                "to": "https://Fake_HA_Server.duckdns.org:8123/api/camera_proxy/camera.front_door?api_password=notMyPassword",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 760,
+        "y": 400,
+        "wires": [
+            [
+                "72f37449.6ab70c"
+            ]
+        ]
+    },
+    {
+        "id": "1d73c37a.0f876d",
+        "type": "api-call-service",
+        "z": "c98c2f87.1a57",
+        "name": "Notify Rob",
+        "server": "1e776005.3ee9b",
+        "service_domain": "notify",
+        "service": "ios_robs_iphone",
+        "data": "{}",
+        "x": 1270,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "72f37449.6ab70c",
+        "type": "function",
+        "z": "c98c2f87.1a57",
+        "name": "Data",
+        "func": "msg.payload = \n{\n  \"data\": \n  {\n    \"message\": msg.windowName,\n    \"data\": \n    {\n      \"push\": \n      {\n        \"badge\": 5,\n        \"category\": \"siren\"\n      },\n      \"attachment\": \n      {\n        \"url\": msg.image,\n        \"content-type\": \"jpeg\",\n        \"hide-thumbnail\": false\n      }\n    }\n  }\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1070,
+        "y": 240,
+        "wires": [
+            [
+                "1d73c37a.0f876d",
+                "286175c7.92581a",
+                "2787e6ef.086f7a"
+            ]
+        ]
+    },
+    {
+        "id": "286175c7.92581a",
+        "type": "api-call-service",
+        "z": "c98c2f87.1a57",
+        "name": "Notify Lindsay",
+        "server": "1e776005.3ee9b",
+        "service_domain": "notify",
+        "service": "ios_lindsays_iphone",
+        "data": "{}",
+        "x": 1280,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "5be7d623.0f8458",
+        "type": "server-state-changed",
+        "z": "c98c2f87.1a57",
+        "name": "Family Room Window 1",
+        "server": "1e776005.3ee9b",
+        "entityidfilter": "sensor.family_room_window_1",
+        "haltifstate": "closed",
+        "x": 200,
+        "y": 100,
+        "wires": [
+            [
+                "9caf9959.935968"
+            ]
+        ]
+    },
+    {
+        "id": "e5899439.d08c58",
+        "type": "server-state-changed",
+        "z": "c98c2f87.1a57",
+        "name": "Family Room Window 2",
+        "server": "1e776005.3ee9b",
+        "entityidfilter": "sensor.family_room_window_2",
+        "haltifstate": "closed",
+        "x": 200,
+        "y": 140,
+        "wires": [
+            [
+                "9caf9959.935968"
+            ]
+        ]
+    },
+    {
+        "id": "408bbf80.a5e59",
+        "type": "server-state-changed",
+        "z": "c98c2f87.1a57",
+        "name": "Family Room Window 3",
+        "server": "1e776005.3ee9b",
+        "entityidfilter": "sensor.family_room_window_3",
+        "haltifstate": "closed",
+        "x": 200,
+        "y": 220,
+        "wires": [
+            [
+                "bbbe4934.bf19a8"
+            ]
+        ]
+    },
+    {
+        "id": "ae1defc4.29a73",
+        "type": "server-state-changed",
+        "z": "c98c2f87.1a57",
+        "name": "Playroom Window",
+        "server": "1e776005.3ee9b",
+        "entityidfilter": "sensor.family_room_window_1",
+        "haltifstate": "closed",
+        "x": 190,
+        "y": 280,
+        "wires": [
+            [
+                "6641fcb9.32f824"
+            ]
+        ]
+    },
+    {
+        "id": "b31d798b.6f36a8",
+        "type": "server-state-changed",
+        "z": "c98c2f87.1a57",
+        "name": "Kitchen Window",
+        "server": "1e776005.3ee9b",
+        "entityidfilter": "sensor.kitchen_window",
+        "haltifstate": "closed",
+        "x": 180,
+        "y": 340,
+        "wires": [
+            [
+                "8f8e0582.9b5348"
+            ]
+        ]
+    },
+    {
+        "id": "fde325f0.93feb8",
+        "type": "server-state-changed",
+        "z": "c98c2f87.1a57",
+        "name": "Dining Room Window",
+        "server": "1e776005.3ee9b",
+        "entityidfilter": "sensor.dining_room_window",
+        "haltifstate": "closed",
+        "x": 200,
+        "y": 400,
+        "wires": [
+            [
+                "5c84fe5d.a7107"
+            ]
+        ]
+    },
+    {
+        "id": "9caf9959.935968",
+        "type": "switch",
+        "z": "c98c2f87.1a57",
+        "name": "Check Battery",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "open",
+                "vt": "str"
+            },
+            {
+                "t": "neq",
+                "v": "open",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 480,
+        "y": 100,
+        "wires": [
+            [
+                "2fd6bcf8.a934f4"
+            ],
+            [
+                "b9aac43.aefd938"
+            ]
+        ]
+    },
+    {
+        "id": "bbbe4934.bf19a8",
+        "type": "switch",
+        "z": "c98c2f87.1a57",
+        "name": "Check Battery",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "open",
+                "vt": "str"
+            },
+            {
+                "t": "neq",
+                "v": "open",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 480,
+        "y": 220,
+        "wires": [
+            [
+                "75bd66dd.07e288"
+            ],
+            [
+                "b9aac43.aefd938"
+            ]
+        ]
+    },
+    {
+        "id": "6641fcb9.32f824",
+        "type": "switch",
+        "z": "c98c2f87.1a57",
+        "name": "Check Battery",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "open",
+                "vt": "str"
+            },
+            {
+                "t": "neq",
+                "v": "open",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 480,
+        "y": 280,
+        "wires": [
+            [
+                "d4b58d21.21339"
+            ],
+            [
+                "b9aac43.aefd938"
+            ]
+        ]
+    },
+    {
+        "id": "8f8e0582.9b5348",
+        "type": "switch",
+        "z": "c98c2f87.1a57",
+        "name": "Check Battery",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "open",
+                "vt": "str"
+            },
+            {
+                "t": "neq",
+                "v": "open",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 480,
+        "y": 340,
+        "wires": [
+            [
+                "faa7e302.a82ca"
+            ],
+            [
+                "b9aac43.aefd938"
+            ]
+        ]
+    },
+    {
+        "id": "5c84fe5d.a7107",
+        "type": "switch",
+        "z": "c98c2f87.1a57",
+        "name": "Check Battery",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "open",
+                "vt": "str"
+            },
+            {
+                "t": "neq",
+                "v": "open",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 480,
+        "y": 400,
+        "wires": [
+            [
+                "5d8fa667.c98288"
+            ],
+            [
+                "b9aac43.aefd938"
+            ]
+        ]
+    },
+    {
+        "id": "8f2151d3.589e5",
+        "type": "api-call-service",
+        "z": "c98c2f87.1a57",
+        "name": "Notify Rob",
+        "server": "1e776005.3ee9b",
+        "service_domain": "notify",
+        "service": "ios_robs_iphone",
+        "data": "{}",
+        "x": 870,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "b9aac43.aefd938",
+        "type": "function",
+        "z": "c98c2f87.1a57",
+        "name": "Data",
+        "func": "msg.payload = \n{\n  \"data\": \n  {\n    \"message\": msg.payload\n  }\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 690,
+        "y": 500,
+        "wires": [
+            [
+                "8f2151d3.589e5"
+            ]
+        ]
+    },
+    {
+        "id": "2787e6ef.086f7a",
+        "type": "api-current-state",
+        "z": "c98c2f87.1a57",
+        "name": "Exterior Alarms",
+        "server": "1e776005.3ee9b",
+        "halt_if": "off",
+        "entity_id": "input_boolean.alarm_exterior",
+        "x": 1080,
+        "y": 440,
+        "wires": [
+            [
+                "edb11620.89b208",
+                "8b00861d.31b668",
+                "89505b71.c0b9d8",
+                "efffa8eb.e98f78",
+                "6e067002.a8af3"
+            ]
+        ]
+    },
+    {
+        "id": "efffa8eb.e98f78",
+        "type": "api-call-service",
+        "z": "c98c2f87.1a57",
+        "name": "Alarm Notify Lindsay",
+        "server": "1e776005.3ee9b",
+        "service_domain": "automation",
+        "service": "trigger",
+        "data": "{   \"entity_id\": \"automation.active_alarm_2\" }",
+        "x": 1300,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "89505b71.c0b9d8",
+        "type": "api-call-service",
+        "z": "c98c2f87.1a57",
+        "name": "Alarm Notify Rob",
+        "server": "1e776005.3ee9b",
+        "service_domain": "automation",
+        "service": "trigger",
+        "data": "{   \"entity_id\": \"automation.active_alarm\" }",
+        "x": 1290,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "8b00861d.31b668",
+        "type": "api-call-service",
+        "z": "c98c2f87.1a57",
+        "name": "Alarm Switch On",
+        "server": "1e776005.3ee9b",
+        "service_domain": "input_boolean",
+        "service": "turn_on",
+        "data": "{   \"entity_id\": \"input_boolean.alarm_siren\" }",
+        "x": 1290,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "edb11620.89b208",
+        "type": "change",
+        "z": "c98c2f87.1a57",
+        "name": "Alarm Lights",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Alarm Lights",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1270,
+        "y": 380,
+        "wires": [
+            [
+                "5b084058.73754"
+            ]
+        ]
+    },
+    {
+        "id": "5b084058.73754",
+        "type": "mqtt out",
+        "z": "c98c2f87.1a57",
+        "name": "Alarm Lights",
+        "topic": "Commands",
+        "qos": "0",
+        "retain": "false",
+        "broker": "cd47f7.b0f6f808",
+        "x": 1430,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "6e067002.a8af3",
+        "type": "mqtt out",
+        "z": "c98c2f87.1a57",
+        "name": "Send Alarm",
+        "topic": "Alarms",
+        "qos": "0",
+        "retain": "false",
+        "broker": "cd47f7.b0f6f808",
+        "x": 1270,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "1e776005.3ee9b",
+        "type": "server",
+        "z": "",
+        "name": "Home Assistant",
+        "url": "https://Fake_HA_Server.duckdns.org:8123",
+        "pass": "notMyPassword"
+    },
+    {
+        "id": "cd47f7.b0f6f808",
+        "type": "mqtt-broker",
+        "z": "",
+        "broker": "192.168.86.168",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": true,
+        "keepalive": "60",
+        "cleansession": true,
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": ""
+    }
+]

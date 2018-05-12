@@ -1,0 +1,148 @@
+[
+    {
+        "id": "de0886b1.a7c028",
+        "type": "server-state-changed",
+        "z": "c98c2f87.1a57",
+        "name": "Rob Home",
+        "server": "1e776005.3ee9b",
+        "entityidfilter": "input_boolean.rob_home",
+        "haltifstate": "on",
+        "x": 160,
+        "y": 1280,
+        "wires": [
+            [
+                "7b030002.045ac"
+            ]
+        ]
+    },
+    {
+        "id": "5c50473a.2e76c8",
+        "type": "server-state-changed",
+        "z": "c98c2f87.1a57",
+        "name": "Lindsay Home",
+        "server": "1e776005.3ee9b",
+        "entityidfilter": "input_boolean.lindsay_home",
+        "haltifstate": "on",
+        "x": 170,
+        "y": 1340,
+        "wires": [
+            [
+                "3c846fc4.f03b6"
+            ]
+        ]
+    },
+    {
+        "id": "7b030002.045ac",
+        "type": "api-current-state",
+        "z": "c98c2f87.1a57",
+        "name": "Lindsay Home",
+        "server": "1e776005.3ee9b",
+        "halt_if": "on",
+        "entity_id": "input_boolean.lindsay_home",
+        "x": 400,
+        "y": 1280,
+        "wires": [
+            [
+                "8f96cd32.02348"
+            ]
+        ]
+    },
+    {
+        "id": "3c846fc4.f03b6",
+        "type": "api-current-state",
+        "z": "c98c2f87.1a57",
+        "name": "Rob Home",
+        "server": "1e776005.3ee9b",
+        "halt_if": "on",
+        "entity_id": "input_boolean.rob_home",
+        "x": 390,
+        "y": 1340,
+        "wires": [
+            [
+                "8f96cd32.02348"
+            ]
+        ]
+    },
+    {
+        "id": "90e05973.d60698",
+        "type": "server-state-changed",
+        "z": "c98c2f87.1a57",
+        "name": "Rob Home",
+        "server": "1e776005.3ee9b",
+        "entityidfilter": "input_boolean.rob_home",
+        "haltifstate": "off",
+        "x": 160,
+        "y": 1420,
+        "wires": [
+            [
+                "d37e441e.1913e8"
+            ]
+        ]
+    },
+    {
+        "id": "7f080f6d.7b385",
+        "type": "server-state-changed",
+        "z": "c98c2f87.1a57",
+        "name": "Lindsay Home",
+        "server": "1e776005.3ee9b",
+        "entityidfilter": "input_boolean.lindsay_home",
+        "haltifstate": "off",
+        "x": 170,
+        "y": 1480,
+        "wires": [
+            [
+                "d37e441e.1913e8"
+            ]
+        ]
+    },
+    {
+        "id": "5f73ff31.c13f3",
+        "type": "api-call-service",
+        "z": "c98c2f87.1a57",
+        "name": "Away",
+        "server": "1e776005.3ee9b",
+        "service_domain": "input_boolean",
+        "service": "turn_off",
+        "data": "{   \"entity_id\": \"input_boolean.home_occupied\" }",
+        "x": 790,
+        "y": 1280,
+        "wires": []
+    },
+    {
+        "id": "d37e441e.1913e8",
+        "type": "api-call-service",
+        "z": "c98c2f87.1a57",
+        "name": "Home",
+        "server": "1e776005.3ee9b",
+        "service_domain": "input_boolean",
+        "service": "turn_on",
+        "data": "{   \"entity_id\": \"input_boolean.home_occupied\" }",
+        "x": 370,
+        "y": 1420,
+        "wires": []
+    },
+    {
+        "id": "8f96cd32.02348",
+        "type": "api-current-state",
+        "z": "c98c2f87.1a57",
+        "name": "House Guests",
+        "server": "1e776005.3ee9b",
+        "halt_if": "on",
+        "entity_id": "input_boolean.house_guests",
+        "x": 620,
+        "y": 1280,
+        "wires": [
+            [
+                "5f73ff31.c13f3"
+            ]
+        ]
+    },
+    {
+        "id": "1e776005.3ee9b",
+        "type": "server",
+        "z": "",
+        "name": "Home Assistant",
+        "url": "https://Fake_HA_Server.duckdns.org:8123",
+        "pass": "notMyPassword"
+    }
+]

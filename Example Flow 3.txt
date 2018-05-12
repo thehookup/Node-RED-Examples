@@ -1,0 +1,805 @@
+[
+    {
+        "id": "96fb8840.cea778",
+        "type": "tab",
+        "label": "Home Away",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "a842a777.1a1818",
+        "type": "function",
+        "z": "96fb8840.cea778",
+        "name": "ON",
+        "func": "if (msg.payload == \"ON\"){\nreturn msg;}",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 950,
+        "y": 820,
+        "wires": [
+            [
+                "f4ce7390.9e9af"
+            ]
+        ]
+    },
+    {
+        "id": "d76bd090.cfe3b",
+        "type": "function",
+        "z": "96fb8840.cea778",
+        "name": "OFF",
+        "func": "if (msg.payload == \"OFF\"){\nreturn msg;}",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 952,
+        "y": 917,
+        "wires": [
+            [
+                "939cf1fa.85821"
+            ]
+        ]
+    },
+    {
+        "id": "f4ce7390.9e9af",
+        "type": "api-call-service",
+        "z": "96fb8840.cea778",
+        "name": "Buffet On",
+        "server": "1e776005.3ee9b",
+        "service_domain": "switch",
+        "service": "turn_on",
+        "data": "{   \"entity_id\": \"switch.buffet_light\" }",
+        "x": 1160,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "939cf1fa.85821",
+        "type": "api-call-service",
+        "z": "96fb8840.cea778",
+        "name": "Buffet Off",
+        "server": "1e776005.3ee9b",
+        "service_domain": "switch",
+        "service": "turn_off",
+        "data": "{   \"entity_id\": \"switch.buffet_light\" }",
+        "x": 1161.8333282470703,
+        "y": 917.5555572509766,
+        "wires": []
+    },
+    {
+        "id": "7ccb344c.108a5c",
+        "type": "light-scheduler",
+        "z": "96fb8840.cea778",
+        "settings": "bc023b9.e858cc8",
+        "events": "[{\"start\":{\"dow\":1,\"mod\":1020},\"end\":{\"dow\":1,\"mod\":1380}},{\"start\":{\"dow\":2,\"mod\":1020},\"end\":{\"dow\":2,\"mod\":1380}},{\"start\":{\"dow\":3,\"mod\":1020},\"end\":{\"dow\":3,\"mod\":1380}},{\"start\":{\"dow\":4,\"mod\":1020},\"end\":{\"dow\":4,\"mod\":1380}},{\"start\":{\"dow\":5,\"mod\":1020},\"end\":{\"dow\":5,\"mod\":1380}},{\"start\":{\"dow\":6,\"mod\":1020},\"end\":{\"dow\":6,\"mod\":1380}},{\"start\":{\"dow\":0,\"mod\":1020},\"end\":{\"dow\":0,\"mod\":1380}}]",
+        "topic": "Buffet",
+        "name": "Buffet Light",
+        "onPayload": "ON",
+        "onPayloadType": "str",
+        "offPayload": "OFF",
+        "offPayloadType": "str",
+        "onlyWhenDark": false,
+        "sunElevationThreshold": 6,
+        "sunShowElevationInStatus": false,
+        "outputfreq": "output.statechange.startup",
+        "x": 770,
+        "y": 860,
+        "wires": [
+            [
+                "a842a777.1a1818",
+                "d76bd090.cfe3b"
+            ]
+        ]
+    },
+    {
+        "id": "b0930a79.e932a8",
+        "type": "light-scheduler",
+        "z": "96fb8840.cea778",
+        "settings": "bc023b9.e858cc8",
+        "events": "[{\"start\":{\"dow\":1,\"mod\":360},\"end\":{\"dow\":2,\"mod\":0}},{\"start\":{\"dow\":2,\"mod\":360},\"end\":{\"dow\":3,\"mod\":0}},{\"start\":{\"dow\":3,\"mod\":360},\"end\":{\"dow\":4,\"mod\":0}},{\"start\":{\"dow\":4,\"mod\":360},\"end\":{\"dow\":5,\"mod\":0}},{\"start\":{\"dow\":5,\"mod\":360},\"end\":{\"dow\":6,\"mod\":0}},{\"start\":{\"dow\":6,\"mod\":360},\"end\":{\"dow\":0,\"mod\":0}},{\"start\":{\"dow\":0,\"mod\":360},\"end\":{\"dow\":1,\"mod\":0}}]",
+        "topic": "Cabinet Lights",
+        "name": "Cabinet Lights",
+        "onPayload": "ON",
+        "onPayloadType": "str",
+        "offPayload": "OFF",
+        "offPayloadType": "str",
+        "onlyWhenDark": false,
+        "sunElevationThreshold": 6,
+        "sunShowElevationInStatus": false,
+        "outputfreq": "output.statechange.startup",
+        "x": 780,
+        "y": 660,
+        "wires": [
+            [
+                "20c87d66.38cd12",
+                "3f1bcfe6.407b4"
+            ]
+        ]
+    },
+    {
+        "id": "20c87d66.38cd12",
+        "type": "function",
+        "z": "96fb8840.cea778",
+        "name": "ON",
+        "func": "if (msg.payload == \"ON\"){\nreturn msg;}",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 950,
+        "y": 600,
+        "wires": [
+            [
+                "620efa82.e296f4"
+            ]
+        ]
+    },
+    {
+        "id": "3f1bcfe6.407b4",
+        "type": "function",
+        "z": "96fb8840.cea778",
+        "name": "OFF",
+        "func": "if (msg.payload == \"OFF\"){\nreturn msg;}",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 953,
+        "y": 705,
+        "wires": [
+            [
+                "a4a6a4fe.ae1398"
+            ]
+        ]
+    },
+    {
+        "id": "620efa82.e296f4",
+        "type": "api-call-service",
+        "z": "96fb8840.cea778",
+        "name": "Cabinet Lights On",
+        "server": "1e776005.3ee9b",
+        "service_domain": "switch",
+        "service": "turn_on",
+        "data": "{   \"entity_id\": \"switch.cabinet_lights\" }",
+        "x": 1184.0000076293945,
+        "y": 599.2222032546997,
+        "wires": []
+    },
+    {
+        "id": "a4a6a4fe.ae1398",
+        "type": "api-call-service",
+        "z": "96fb8840.cea778",
+        "name": "Cabinet Lights Off",
+        "server": "1e776005.3ee9b",
+        "service_domain": "switch",
+        "service": "turn_off",
+        "data": "{   \"entity_id\": \"switch.cabinet_lights\" }",
+        "x": 1183.8333435058594,
+        "y": 705.4446439743042,
+        "wires": []
+    },
+    {
+        "id": "d197735a.484b6",
+        "type": "api-call-service",
+        "z": "96fb8840.cea778",
+        "name": "Exterior Notifications On",
+        "server": "1e776005.3ee9b",
+        "service_domain": "input_boolean",
+        "service": "turn_on",
+        "data": "{   \"entity_id\": \"input_boolean.notify_exterior\" }",
+        "x": 630,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "9a9fd0e1.dd29",
+        "type": "server-state-changed",
+        "z": "96fb8840.cea778",
+        "name": "Away",
+        "server": "1e776005.3ee9b",
+        "entityidfilter": "input_boolean.home_occupied",
+        "haltifstate": "on",
+        "x": 150,
+        "y": 560,
+        "wires": [
+            [
+                "f6db335b.7c475",
+                "8002357d.2189d8",
+                "8c24dadf.a515b8",
+                "30e253a6.c1db1c",
+                "614d6dcf.1d8cb4",
+                "6baf9fc5.68c49",
+                "372fa099.11b85"
+            ]
+        ]
+    },
+    {
+        "id": "9ccdbfd5.dda22",
+        "type": "api-call-service",
+        "z": "96fb8840.cea778",
+        "name": "Garage Entry Off",
+        "server": "1e776005.3ee9b",
+        "service_domain": "switch",
+        "service": "turn_off",
+        "data": "{   \"entity_id\": \"switch.garage_entry_light\" }",
+        "x": 610,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "8d21834b.5b90d",
+        "type": "api-call-service",
+        "z": "96fb8840.cea778",
+        "name": "Uplights Off",
+        "server": "1e776005.3ee9b",
+        "service_domain": "switch",
+        "service": "turn_off",
+        "data": "{   \"entity_id\": \"switch.uplights\" }",
+        "x": 590,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "b49f9d7c.98349",
+        "type": "api-call-service",
+        "z": "96fb8840.cea778",
+        "name": "Ben Light Off",
+        "server": "1e776005.3ee9b",
+        "service_domain": "light",
+        "service": "turn_off",
+        "data": "{   \"entity_id\": \"light.ben_light\" }",
+        "x": 590,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "2464184a.47de98",
+        "type": "api-call-service",
+        "z": "96fb8840.cea778",
+        "name": "Other Ben Light Off",
+        "server": "1e776005.3ee9b",
+        "service_domain": "light",
+        "service": "turn_off",
+        "data": "{   \"entity_id\": \"light.other_ben_light\" }",
+        "x": 610,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "c75f0bed.a1ff08",
+        "type": "api-call-service",
+        "z": "96fb8840.cea778",
+        "name": "Kitchen Lights Off",
+        "server": "1e776005.3ee9b",
+        "service_domain": "light",
+        "service": "turn_off",
+        "data": "{   \"entity_id\": \"light.kitchen_lights\" }",
+        "x": 610,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "cd75dbb4.439008",
+        "type": "server-state-changed",
+        "z": "96fb8840.cea778",
+        "name": "Home",
+        "server": "1e776005.3ee9b",
+        "entityidfilter": "input_boolean.home_occupied",
+        "haltifstate": "off",
+        "x": 150,
+        "y": 880,
+        "wires": [
+            [
+                "396d9b9f.abedb4",
+                "10abfcf2.392423",
+                "50aef83a.d93078",
+                "92c6bae4.888248",
+                "41fc4c31.e71f14",
+                "4ce27abd.e894a4",
+                "be55f15c.b6c46"
+            ]
+        ]
+    },
+    {
+        "id": "396d9b9f.abedb4",
+        "type": "api-call-service",
+        "z": "96fb8840.cea778",
+        "name": "Exterior Notifications Off",
+        "server": "1e776005.3ee9b",
+        "service_domain": "input_boolean",
+        "service": "turn_off",
+        "data": "{   \"entity_id\": \"input_boolean.notify_exterior\" }",
+        "x": 470,
+        "y": 1180,
+        "wires": []
+    },
+    {
+        "id": "10abfcf2.392423",
+        "type": "change",
+        "z": "96fb8840.cea778",
+        "name": "auto",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "auto",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 410,
+        "y": 860,
+        "wires": [
+            [
+                "7ccb344c.108a5c",
+                "b0930a79.e932a8"
+            ]
+        ]
+    },
+    {
+        "id": "f6db335b.7c475",
+        "type": "change",
+        "z": "96fb8840.cea778",
+        "name": "off",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "off",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 410,
+        "y": 780,
+        "wires": [
+            [
+                "7ccb344c.108a5c",
+                "b0930a79.e932a8"
+            ]
+        ]
+    },
+    {
+        "id": "8002357d.2189d8",
+        "type": "delay",
+        "z": "96fb8840.cea778",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "1",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 340,
+        "y": 220,
+        "wires": [
+            [
+                "9ccdbfd5.dda22",
+                "8d21834b.5b90d",
+                "b49f9d7c.98349",
+                "2464184a.47de98",
+                "c75f0bed.a1ff08",
+                "d197735a.484b6"
+            ]
+        ]
+    },
+    {
+        "id": "8c24dadf.a515b8",
+        "type": "api-current-state",
+        "z": "96fb8840.cea778",
+        "name": "Garage Entry State",
+        "server": "1e776005.3ee9b",
+        "halt_if": "",
+        "entity_id": "switch.garage_entry_light",
+        "x": 410,
+        "y": 400,
+        "wires": [
+            [
+                "5744724.3c86b8c"
+            ]
+        ]
+    },
+    {
+        "id": "614d6dcf.1d8cb4",
+        "type": "api-current-state",
+        "z": "96fb8840.cea778",
+        "name": "Ben Light State",
+        "server": "1e776005.3ee9b",
+        "halt_if": "",
+        "entity_id": "light.ben_light",
+        "x": 400,
+        "y": 480,
+        "wires": [
+            [
+                "a9b75686.b67e28"
+            ]
+        ]
+    },
+    {
+        "id": "30e253a6.c1db1c",
+        "type": "api-current-state",
+        "z": "96fb8840.cea778",
+        "name": "Uplights State",
+        "server": "1e776005.3ee9b",
+        "halt_if": "",
+        "entity_id": "switch.uplights",
+        "x": 400,
+        "y": 440,
+        "wires": [
+            [
+                "edacff67.f2e22"
+            ]
+        ]
+    },
+    {
+        "id": "6baf9fc5.68c49",
+        "type": "api-current-state",
+        "z": "96fb8840.cea778",
+        "name": "Other Ben Light",
+        "server": "1e776005.3ee9b",
+        "halt_if": "",
+        "entity_id": "light.other_ben_light",
+        "x": 400,
+        "y": 520,
+        "wires": [
+            [
+                "96ab2636.4f66c8"
+            ]
+        ]
+    },
+    {
+        "id": "372fa099.11b85",
+        "type": "api-current-state",
+        "z": "96fb8840.cea778",
+        "name": "Kitchen Light State",
+        "server": "1e776005.3ee9b",
+        "halt_if": "",
+        "entity_id": "light.kitchen_lights",
+        "x": 410,
+        "y": 560,
+        "wires": [
+            [
+                "287c9689.377d1a"
+            ]
+        ]
+    },
+    {
+        "id": "5744724.3c86b8c",
+        "type": "change",
+        "z": "96fb8840.cea778",
+        "name": "Garage Flow",
+        "rules": [
+            {
+                "t": "set",
+                "p": "garageEntry",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 650,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "edacff67.f2e22",
+        "type": "change",
+        "z": "96fb8840.cea778",
+        "name": "Uplights Flow",
+        "rules": [
+            {
+                "t": "set",
+                "p": "uplights",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 660,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a9b75686.b67e28",
+        "type": "change",
+        "z": "96fb8840.cea778",
+        "name": "Ben Light Flow",
+        "rules": [
+            {
+                "t": "set",
+                "p": "benLight",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 660,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "96ab2636.4f66c8",
+        "type": "change",
+        "z": "96fb8840.cea778",
+        "name": "Other Ben Light Flow",
+        "rules": [
+            {
+                "t": "set",
+                "p": "otherBenLight",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 680,
+        "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "287c9689.377d1a",
+        "type": "change",
+        "z": "96fb8840.cea778",
+        "name": "Kitchen Light Flow",
+        "rules": [
+            {
+                "t": "set",
+                "p": "kichenLight",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 670,
+        "y": 560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "50aef83a.d93078",
+        "type": "switch",
+        "z": "96fb8840.cea778",
+        "name": "Garage Flow",
+        "property": "garageEntry",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "on",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 430,
+        "y": 960,
+        "wires": [
+            [
+                "7257d925.520be8"
+            ]
+        ]
+    },
+    {
+        "id": "92c6bae4.888248",
+        "type": "switch",
+        "z": "96fb8840.cea778",
+        "name": "Uplights Flow",
+        "property": "uplights",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "on",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 440,
+        "y": 1000,
+        "wires": [
+            [
+                "b4d6f661.8c6c88"
+            ]
+        ]
+    },
+    {
+        "id": "41fc4c31.e71f14",
+        "type": "switch",
+        "z": "96fb8840.cea778",
+        "name": "Ben Light Flow",
+        "property": "benLight",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "on",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 440,
+        "y": 1040,
+        "wires": [
+            [
+                "7b4f5687.787a78"
+            ]
+        ]
+    },
+    {
+        "id": "4ce27abd.e894a4",
+        "type": "switch",
+        "z": "96fb8840.cea778",
+        "name": "Other Ben Light Flow",
+        "property": "otherBenLight",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "on",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 460,
+        "y": 1080,
+        "wires": [
+            [
+                "1f72f557.d77d5b"
+            ]
+        ]
+    },
+    {
+        "id": "be55f15c.b6c46",
+        "type": "switch",
+        "z": "96fb8840.cea778",
+        "name": "Kitchen Light Flow",
+        "property": "kitchenLight",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "on",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 450,
+        "y": 1120,
+        "wires": [
+            [
+                "b1042567.79fca8"
+            ]
+        ]
+    },
+    {
+        "id": "7257d925.520be8",
+        "type": "api-call-service",
+        "z": "96fb8840.cea778",
+        "name": "Garage Entry On",
+        "server": "1e776005.3ee9b",
+        "service_domain": "switch",
+        "service": "turn_on",
+        "data": "{   \"entity_id\": \"switch.garage_entry_light\" }",
+        "x": 750,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "b4d6f661.8c6c88",
+        "type": "api-call-service",
+        "z": "96fb8840.cea778",
+        "name": "Uplights On",
+        "server": "1e776005.3ee9b",
+        "service_domain": "switch",
+        "service": "turn_on",
+        "data": "{   \"entity_id\": \"switch.uplights\" }",
+        "x": 730,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "7b4f5687.787a78",
+        "type": "api-call-service",
+        "z": "96fb8840.cea778",
+        "name": "Ben Light On",
+        "server": "1e776005.3ee9b",
+        "service_domain": "light",
+        "service": "turn_on",
+        "data": "{   \"entity_id\": \"light.ben_light\" }",
+        "x": 730,
+        "y": 1040,
+        "wires": []
+    },
+    {
+        "id": "1f72f557.d77d5b",
+        "type": "api-call-service",
+        "z": "96fb8840.cea778",
+        "name": "Other Ben Light On",
+        "server": "1e776005.3ee9b",
+        "service_domain": "light",
+        "service": "turn_on",
+        "data": "{   \"entity_id\": \"light.other_ben_light\" }",
+        "x": 750,
+        "y": 1080,
+        "wires": []
+    },
+    {
+        "id": "b1042567.79fca8",
+        "type": "api-call-service",
+        "z": "96fb8840.cea778",
+        "name": "Kitchen Lights On",
+        "server": "1e776005.3ee9b",
+        "service_domain": "light",
+        "service": "turn_on",
+        "data": "{   \"entity_id\": \"light.kitchen_lights\" }",
+        "x": 750,
+        "y": 1120,
+        "wires": []
+    },
+    {
+        "id": "1e776005.3ee9b",
+        "type": "server",
+        "z": "",
+        "name": "Home Assistant",
+        "url": "https://Fake_HA_Server.duckdns.org:8123",
+        "pass": "notMyPassword"
+    },
+    {
+        "id": "bc023b9.e858cc8",
+        "type": "light-scheduler-settings",
+        "z": "",
+        "name": "my settings",
+        "latitude": "38.8977",
+        "longitude": "77.0365"
+    }
+]
