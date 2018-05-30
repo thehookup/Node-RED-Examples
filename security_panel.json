@@ -1,0 +1,1056 @@
+[
+    {
+        "id": "b792f2de.9024d",
+        "type": "tab",
+        "label": "Alarm Panel",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "ff5b1814.1d7e08",
+        "type": "ui_button",
+        "z": "b792f2de.9024d",
+        "name": "",
+        "group": "eac4c8cc.4243c8",
+        "order": 5,
+        "width": "2",
+        "height": "2",
+        "passthru": false,
+        "label": "5",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "5",
+        "payloadType": "str",
+        "topic": "",
+        "x": 90,
+        "y": 500,
+        "wires": [
+            [
+                "f03cc23d.0507b"
+            ]
+        ]
+    },
+    {
+        "id": "f03cc23d.0507b",
+        "type": "join",
+        "z": "b792f2de.9024d",
+        "name": "",
+        "mode": "custom",
+        "build": "string",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "20",
+        "count": "4",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "num",
+        "reduceFixup": "",
+        "x": 330,
+        "y": 560,
+        "wires": [
+            [
+                "1b357f8.e59b781"
+            ]
+        ]
+    },
+    {
+        "id": "dd89534f.f7f92",
+        "type": "ui_button",
+        "z": "b792f2de.9024d",
+        "name": "",
+        "group": "eac4c8cc.4243c8",
+        "order": 2,
+        "width": "2",
+        "height": "2",
+        "passthru": false,
+        "label": "2",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "2",
+        "payloadType": "str",
+        "topic": "",
+        "x": 90,
+        "y": 379,
+        "wires": [
+            [
+                "f03cc23d.0507b"
+            ]
+        ]
+    },
+    {
+        "id": "eb689681.a8d7e8",
+        "type": "ui_button",
+        "z": "b792f2de.9024d",
+        "name": "",
+        "group": "eac4c8cc.4243c8",
+        "order": 3,
+        "width": "2",
+        "height": "2",
+        "passthru": false,
+        "label": "3",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "3",
+        "payloadType": "str",
+        "topic": "",
+        "x": 90,
+        "y": 419,
+        "wires": [
+            [
+                "f03cc23d.0507b"
+            ]
+        ]
+    },
+    {
+        "id": "62b5bf9f.e012a",
+        "type": "ui_button",
+        "z": "b792f2de.9024d",
+        "name": "",
+        "group": "eac4c8cc.4243c8",
+        "order": 4,
+        "width": "2",
+        "height": "2",
+        "passthru": false,
+        "label": "4",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "4",
+        "payloadType": "str",
+        "topic": "",
+        "x": 90,
+        "y": 460,
+        "wires": [
+            [
+                "f03cc23d.0507b"
+            ]
+        ]
+    },
+    {
+        "id": "f060a516.a9e068",
+        "type": "ui_button",
+        "z": "b792f2de.9024d",
+        "name": "",
+        "group": "eac4c8cc.4243c8",
+        "order": 6,
+        "width": "2",
+        "height": "2",
+        "passthru": false,
+        "label": "6",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "6",
+        "payloadType": "str",
+        "topic": "",
+        "x": 90,
+        "y": 540,
+        "wires": [
+            [
+                "f03cc23d.0507b"
+            ]
+        ]
+    },
+    {
+        "id": "8641f41b.60c2e8",
+        "type": "ui_button",
+        "z": "b792f2de.9024d",
+        "name": "",
+        "group": "eac4c8cc.4243c8",
+        "order": 7,
+        "width": "2",
+        "height": "2",
+        "passthru": false,
+        "label": "7",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "7",
+        "payloadType": "str",
+        "topic": "",
+        "x": 90,
+        "y": 580,
+        "wires": [
+            [
+                "f03cc23d.0507b"
+            ]
+        ]
+    },
+    {
+        "id": "30c6f338.9e37cc",
+        "type": "ui_button",
+        "z": "b792f2de.9024d",
+        "name": "",
+        "group": "eac4c8cc.4243c8",
+        "order": 8,
+        "width": "2",
+        "height": "2",
+        "passthru": false,
+        "label": "8",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "8",
+        "payloadType": "str",
+        "topic": "",
+        "x": 90,
+        "y": 620,
+        "wires": [
+            [
+                "f03cc23d.0507b"
+            ]
+        ]
+    },
+    {
+        "id": "53d3ed7.10c3f14",
+        "type": "ui_button",
+        "z": "b792f2de.9024d",
+        "name": "",
+        "group": "eac4c8cc.4243c8",
+        "order": 9,
+        "width": "2",
+        "height": "2",
+        "passthru": false,
+        "label": "9",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "9",
+        "payloadType": "str",
+        "topic": "",
+        "x": 90,
+        "y": 660,
+        "wires": [
+            [
+                "f03cc23d.0507b"
+            ]
+        ]
+    },
+    {
+        "id": "76495ac8.12b564",
+        "type": "ui_button",
+        "z": "b792f2de.9024d",
+        "name": "",
+        "group": "eac4c8cc.4243c8",
+        "order": 10,
+        "width": "2",
+        "height": "2",
+        "passthru": false,
+        "label": "*",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "*",
+        "payloadType": "str",
+        "topic": "",
+        "x": 90,
+        "y": 700,
+        "wires": [
+            [
+                "f03cc23d.0507b"
+            ]
+        ]
+    },
+    {
+        "id": "4db4ca8f.a491c4",
+        "type": "ui_button",
+        "z": "b792f2de.9024d",
+        "name": "",
+        "group": "eac4c8cc.4243c8",
+        "order": 11,
+        "width": "2",
+        "height": "2",
+        "passthru": false,
+        "label": "0",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "0",
+        "payloadType": "str",
+        "topic": "",
+        "x": 90,
+        "y": 740,
+        "wires": [
+            [
+                "f03cc23d.0507b"
+            ]
+        ]
+    },
+    {
+        "id": "ca08b616.195488",
+        "type": "change",
+        "z": "b792f2de.9024d",
+        "name": "Message Complete",
+        "rules": [
+            {
+                "t": "set",
+                "p": "complete",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 290,
+        "y": 780,
+        "wires": [
+            [
+                "f03cc23d.0507b"
+            ]
+        ]
+    },
+    {
+        "id": "b771f12c.0ccfd",
+        "type": "ui_button",
+        "z": "b792f2de.9024d",
+        "name": "",
+        "group": "eac4c8cc.4243c8",
+        "order": 12,
+        "width": "2",
+        "height": "2",
+        "passthru": false,
+        "label": "Clear",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "Clear",
+        "payloadType": "str",
+        "topic": "",
+        "x": 90,
+        "y": 780,
+        "wires": [
+            [
+                "ca08b616.195488"
+            ]
+        ]
+    },
+    {
+        "id": "9210fbba.cd35c8",
+        "type": "api-current-state",
+        "z": "b792f2de.9024d",
+        "name": "Exterior Alarm State",
+        "server": "1e776005.3ee9b",
+        "halt_if": "",
+        "entity_id": "input_boolean.notify_gates",
+        "x": 660,
+        "y": 500,
+        "wires": [
+            [
+                "7747e6be.3e91a8"
+            ]
+        ]
+    },
+    {
+        "id": "7747e6be.3e91a8",
+        "type": "switch",
+        "z": "b792f2de.9024d",
+        "name": "Check State",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "on",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "off",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 870,
+        "y": 500,
+        "wires": [
+            [
+                "de8843dd.cb3e4",
+                "2694b71a.963998"
+            ],
+            [
+                "28611b88.1b4344"
+            ]
+        ]
+    },
+    {
+        "id": "28611b88.1b4344",
+        "type": "change",
+        "z": "b792f2de.9024d",
+        "name": "arming",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Alarm Arming in 45 Seconds",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "armingStatus",
+                "pt": "flow",
+                "to": "arming",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "message",
+                "pt": "msg",
+                "to": "arming",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 950,
+        "y": 680,
+        "wires": [
+            [
+                "67a6a88.0b64958",
+                "cd326e99.ad7a3",
+                "d20b1f6c.c0f9a"
+            ]
+        ]
+    },
+    {
+        "id": "de8843dd.cb3e4",
+        "type": "change",
+        "z": "b792f2de.9024d",
+        "name": "\"alarm disarmed\"",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Alarm Disarmed",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1070,
+        "y": 420,
+        "wires": [
+            [
+                "d274db1e.37c938"
+            ]
+        ]
+    },
+    {
+        "id": "2694b71a.963998",
+        "type": "api-call-service",
+        "z": "b792f2de.9024d",
+        "name": "Disarm Alarm",
+        "server": "1e776005.3ee9b",
+        "service_domain": "input_boolean",
+        "service": "turn_off",
+        "data": "{ \"entity_id\":\"input_boolean.notify_gates\"}",
+        "x": 1080,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "67a6a88.0b64958",
+        "type": "delay",
+        "z": "b792f2de.9024d",
+        "name": "Delay 45 Seconds",
+        "pauseType": "delayv",
+        "timeout": "45",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "x": 1150,
+        "y": 640,
+        "wires": [
+            [
+                "c0c361be.671ec"
+            ]
+        ]
+    },
+    {
+        "id": "d274db1e.37c938",
+        "type": "ui_audio",
+        "z": "b792f2de.9024d",
+        "name": "Alarm Disarmed",
+        "group": "eac4c8cc.4243c8",
+        "voice": "en-US",
+        "always": "",
+        "x": 1280,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "dfa960d9.f8be2",
+        "type": "api-call-service",
+        "z": "b792f2de.9024d",
+        "name": "Arm Alarm",
+        "server": "1e776005.3ee9b",
+        "service_domain": "input_boolean",
+        "service": "turn_on",
+        "data": "{ \"entity_id\":\"input_boolean.notify_gates\"}",
+        "x": 1490,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "cd326e99.ad7a3",
+        "type": "ui_text",
+        "z": "b792f2de.9024d",
+        "group": "eac4c8cc.4243c8",
+        "order": 14,
+        "width": "6",
+        "height": "1",
+        "name": "Alarm Status",
+        "label": "Alarm Status:",
+        "format": "{{msg.message}}",
+        "layout": "row-spread",
+        "x": 1090,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "60285c4a.a080a4",
+        "type": "server-state-changed",
+        "z": "b792f2de.9024d",
+        "name": "Exterior Alarm",
+        "server": "1e776005.3ee9b",
+        "entityidfilter": "input_boolean.notify_gates",
+        "haltifstate": "",
+        "x": 690,
+        "y": 860,
+        "wires": [
+            [
+                "a7e7943f.f79de8"
+            ]
+        ]
+    },
+    {
+        "id": "717f068e.cbcd58",
+        "type": "change",
+        "z": "b792f2de.9024d",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "armingStatus",
+                "pt": "flow",
+                "to": "notArming",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1520,
+        "y": 580,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c0c361be.671ec",
+        "type": "switch",
+        "z": "b792f2de.9024d",
+        "name": "arming",
+        "property": "armingStatus",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "arming",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 1330,
+        "y": 640,
+        "wires": [
+            [
+                "dfa960d9.f8be2",
+                "717f068e.cbcd58"
+            ]
+        ]
+    },
+    {
+        "id": "1b357f8.e59b781",
+        "type": "switch",
+        "z": "b792f2de.9024d",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1457",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 410,
+        "y": 480,
+        "wires": [
+            [
+                "bfb9eff4.04e69"
+            ]
+        ]
+    },
+    {
+        "id": "39e7850.289db7c",
+        "type": "change",
+        "z": "b792f2de.9024d",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "armingStatus",
+                "pt": "flow",
+                "to": "notArming",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 720,
+        "y": 640,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "bfb9eff4.04e69",
+        "type": "switch",
+        "z": "b792f2de.9024d",
+        "name": "",
+        "property": "armingStatus",
+        "propertyType": "flow",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "arming",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "notArming",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 490,
+        "y": 560,
+        "wires": [
+            [
+                "39e7850.289db7c",
+                "52ed3414.c0540c"
+            ],
+            [
+                "9210fbba.cd35c8"
+            ]
+        ]
+    },
+    {
+        "id": "52ed3414.c0540c",
+        "type": "trigger",
+        "z": "b792f2de.9024d",
+        "op1": "cancelled",
+        "op2": "off",
+        "op1type": "str",
+        "op2type": "str",
+        "duration": "3",
+        "extend": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "name": "",
+        "x": 680,
+        "y": 720,
+        "wires": [
+            [
+                "a7e7943f.f79de8"
+            ]
+        ]
+    },
+    {
+        "id": "a7e7943f.f79de8",
+        "type": "change",
+        "z": "b792f2de.9024d",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "message",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 890,
+        "y": 860,
+        "wires": [
+            [
+                "cd326e99.ad7a3"
+            ]
+        ]
+    },
+    {
+        "id": "d20b1f6c.c0f9a",
+        "type": "ui_audio",
+        "z": "b792f2de.9024d",
+        "name": "Arming 45 Seconds",
+        "group": "eac4c8cc.4243c8",
+        "voice": "en-US",
+        "always": "",
+        "x": 1190,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "4c8cabfb.45b814",
+        "type": "inject",
+        "z": "b792f2de.9024d",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "x": 110,
+        "y": 260,
+        "wires": [
+            [
+                "e9b8e4c7.1fecf8"
+            ]
+        ]
+    },
+    {
+        "id": "e9b8e4c7.1fecf8",
+        "type": "change",
+        "z": "b792f2de.9024d",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "armingStatus",
+                "pt": "flow",
+                "to": "notArming",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 320,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "19ff9aa0.461855",
+        "type": "ui_button",
+        "z": "b792f2de.9024d",
+        "name": "",
+        "group": "eac4c8cc.4243c8",
+        "order": 1,
+        "width": "2",
+        "height": "2",
+        "passthru": false,
+        "label": "1",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "1",
+        "payloadType": "str",
+        "topic": "",
+        "x": 90,
+        "y": 340,
+        "wires": [
+            [
+                "f03cc23d.0507b"
+            ]
+        ]
+    },
+    {
+        "id": "a113d95a.a66bc8",
+        "type": "ui_text",
+        "z": "b792f2de.9024d",
+        "group": "2bfca87d.509508",
+        "order": 0,
+        "width": "6",
+        "height": "1",
+        "name": "Dispay",
+        "label": "Front Door",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 430,
+        "y": 920,
+        "wires": []
+    },
+    {
+        "id": "6d0eb87d.8df568",
+        "type": "server-state-changed",
+        "z": "b792f2de.9024d",
+        "name": "Front Door",
+        "server": "1e776005.3ee9b",
+        "entityidfilter": "binary_sensor.front_door",
+        "haltifstate": "",
+        "x": 100,
+        "y": 920,
+        "wires": [
+            [
+                "dca32d28.2a9a1"
+            ]
+        ]
+    },
+    {
+        "id": "a1b96a3c.2df408",
+        "type": "ui_text",
+        "z": "b792f2de.9024d",
+        "group": "2bfca87d.509508",
+        "order": 0,
+        "width": "6",
+        "height": "1",
+        "name": "Dispay",
+        "label": "Back Door",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 430,
+        "y": 960,
+        "wires": []
+    },
+    {
+        "id": "70d82d9f.7eeab4",
+        "type": "server-state-changed",
+        "z": "b792f2de.9024d",
+        "name": "Back Door",
+        "server": "1e776005.3ee9b",
+        "entityidfilter": "binary_sensor.sliding_glass_door",
+        "haltifstate": "",
+        "x": 100,
+        "y": 960,
+        "wires": [
+            [
+                "208c82ed.16baee"
+            ]
+        ]
+    },
+    {
+        "id": "9c2006b6.e7a288",
+        "type": "ui_text",
+        "z": "b792f2de.9024d",
+        "group": "2bfca87d.509508",
+        "order": 0,
+        "width": "6",
+        "height": "1",
+        "name": "Dispay",
+        "label": "North Gate",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 430,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "d05bce53.563a1",
+        "type": "server-state-changed",
+        "z": "b792f2de.9024d",
+        "name": "North Gate",
+        "server": "1e776005.3ee9b",
+        "entityidfilter": "binary_sensor.hittel_gate",
+        "haltifstate": "",
+        "x": 100,
+        "y": 1000,
+        "wires": [
+            [
+                "6ae7da3d.d77c94"
+            ]
+        ]
+    },
+    {
+        "id": "fb0ee138.c0708",
+        "type": "ui_text",
+        "z": "b792f2de.9024d",
+        "group": "2bfca87d.509508",
+        "order": 0,
+        "width": "6",
+        "height": "1",
+        "name": "Dispay",
+        "label": "Front Door",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 430,
+        "y": 1040,
+        "wires": []
+    },
+    {
+        "id": "f646486f.ef0698",
+        "type": "server-state-changed",
+        "z": "b792f2de.9024d",
+        "name": "South Gate",
+        "server": "1e776005.3ee9b",
+        "entityidfilter": "binary_sensor.zeier_gate",
+        "haltifstate": "",
+        "x": 100,
+        "y": 1040,
+        "wires": [
+            [
+                "e95962ba.3322"
+            ]
+        ]
+    },
+    {
+        "id": "dca32d28.2a9a1",
+        "type": "function",
+        "z": "b792f2de.9024d",
+        "name": "Change It",
+        "func": "if(msg.payload == \"off\")\n{\n    msg.payload = \"Closed\";\n}\nif(msg.payload == \"off\")\n{\n    msg.payload = \"Open\";\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 260,
+        "y": 920,
+        "wires": [
+            [
+                "a113d95a.a66bc8"
+            ]
+        ]
+    },
+    {
+        "id": "208c82ed.16baee",
+        "type": "function",
+        "z": "b792f2de.9024d",
+        "name": "Change It",
+        "func": "if(msg.payload == \"off\")\n{\n    msg.payload = \"Closed\";\n}\nif(msg.payload == \"off\")\n{\n    msg.payload = \"Open\";\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 260,
+        "y": 960,
+        "wires": [
+            [
+                "a1b96a3c.2df408"
+            ]
+        ]
+    },
+    {
+        "id": "6ae7da3d.d77c94",
+        "type": "function",
+        "z": "b792f2de.9024d",
+        "name": "Change It",
+        "func": "if(msg.payload == \"off\")\n{\n    msg.payload = \"Closed\";\n}\nif(msg.payload == \"off\")\n{\n    msg.payload = \"Open\";\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 260,
+        "y": 1000,
+        "wires": [
+            [
+                "9c2006b6.e7a288"
+            ]
+        ]
+    },
+    {
+        "id": "e95962ba.3322",
+        "type": "function",
+        "z": "b792f2de.9024d",
+        "name": "Change It",
+        "func": "if(msg.payload == \"off\")\n{\n    msg.payload = \"Closed\";\n}\nif(msg.payload == \"off\")\n{\n    msg.payload = \"Open\";\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 260,
+        "y": 1040,
+        "wires": [
+            [
+                "fb0ee138.c0708"
+            ]
+        ]
+    },
+    {
+        "id": "eac4c8cc.4243c8",
+        "type": "ui_group",
+        "z": "",
+        "name": "Keypad",
+        "tab": "b0c179ba.fd1718",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "1e776005.3ee9b",
+        "type": "server",
+        "z": "",
+        "name": "Home Assistant",
+        "url": "http://192.168.86.168:8123",
+        "pass": "NotMyPassword"
+    },
+    {
+        "id": "2bfca87d.509508",
+        "type": "ui_group",
+        "z": "",
+        "name": "Door Status",
+        "tab": "91d57fec.f4c15",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "b0c179ba.fd1718",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Alarm Panel",
+        "icon": "dashboard",
+        "order": 1
+    },
+    {
+        "id": "91d57fec.f4c15",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Pool Controls",
+        "icon": "dashboard",
+        "order": 2
+    }
+]
