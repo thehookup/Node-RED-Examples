@@ -16,3 +16,12 @@ automation old:
             url: 'https://Fake_HA_Server.duckdns.org:8123/api/camera_proxy/camera.front_door?api_password=notMyPassword'
             content-type: jpeg
             hide-thumbnail: false
+  - alias: Activate Alarms
+    trigger:
+      platform: event
+      event_type: ios.notification_action_fired
+      event_data:
+        actionName: ACTIVATE_SIRENS
+    action:
+      service: input_boolean.turn_on
+      entity_id: input_boolean.manual_alarm_siren
