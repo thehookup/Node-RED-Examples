@@ -1,0 +1,65 @@
+[
+    {
+        "id": "af0aa825.8ec6f8",
+        "type": "server-state-changed",
+        "z": "5865e563.6af48c",
+        "name": "Medine Reminder",
+        "server": "d64dbedb.b22df",
+        "entityidfilter": "input_boolean.medicine_reminder",
+        "entityidfiltertype": "substring",
+        "haltifstate": "Off",
+        "x": 324.86365509033203,
+        "y": 2324.726984024048,
+        "wires": [
+            [
+                "dc114b9.72cacb8"
+            ]
+        ]
+    },
+    {
+        "id": "dc114b9.72cacb8",
+        "type": "trigger",
+        "z": "5865e563.6af48c",
+        "op1": "",
+        "op2": "on",
+        "op1type": "nul",
+        "op2type": "str",
+        "duration": "30",
+        "extend": false,
+        "units": "min",
+        "reset": "off",
+        "bytopic": "all",
+        "name": "",
+        "x": 576.863655090332,
+        "y": 2324.6366119384766,
+        "wires": [
+            [
+                "681f8580.c173cc"
+            ]
+        ]
+    },
+    {
+        "id": "681f8580.c173cc",
+        "type": "api-call-service",
+        "z": "5865e563.6af48c",
+        "name": "Notify Rob",
+        "server": "d64dbedb.b22df",
+        "service_domain": "notify",
+        "service": "ios_robs_iphone",
+        "data": "{   \"message\": \"Good Morning! Remember your meds!\",   \"data\": {     \"push\": {       \"badge\": 5,       \"category\": \"medicine\"     }   } }",
+        "mergecontext": "",
+        "x": 880.863655090332,
+        "y": 2323.6360836029053,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d64dbedb.b22df",
+        "type": "server",
+        "z": "",
+        "name": "Home Assistant",
+        "url": "http://hassio/homeassistant",
+        "pass": "pass"
+    }
+]

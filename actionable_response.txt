@@ -1,0 +1,227 @@
+[
+    {
+        "id": "d0c8b5df.d1db78",
+        "type": "server-events",
+        "z": "5865e563.6af48c",
+        "name": "All",
+        "server": "d64dbedb.b22df",
+        "x": 310.0000801086426,
+        "y": 2546.9096870422363,
+        "wires": [
+            [
+                "8e3a0e66.9d8fb"
+            ]
+        ]
+    },
+    {
+        "id": "8e3a0e66.9d8fb",
+        "type": "switch",
+        "z": "5865e563.6af48c",
+        "name": "",
+        "property": "payload.event.actionName",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "SNOOZE",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "ALREADY_TAKEN",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "REMIND_HOME",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 444.0000915527344,
+        "y": 2546.910297393799,
+        "wires": [
+            [
+                "29797a59.da9b56"
+            ],
+            [
+                "b0e74dd.4ec11b"
+            ],
+            [
+                "988a9a94.6a4da8"
+            ]
+        ]
+    },
+    {
+        "id": "29797a59.da9b56",
+        "type": "trigger",
+        "z": "5865e563.6af48c",
+        "op1": "",
+        "op2": "on",
+        "op1type": "nul",
+        "op2type": "str",
+        "duration": "5",
+        "extend": false,
+        "units": "min",
+        "reset": "off",
+        "bytopic": "all",
+        "name": "",
+        "x": 618.0000839233398,
+        "y": 2450.9096870422363,
+        "wires": [
+            [
+                "d9727fb6.ab232"
+            ]
+        ]
+    },
+    {
+        "id": "d9727fb6.ab232",
+        "type": "api-call-service",
+        "z": "5865e563.6af48c",
+        "name": "Notify Rob",
+        "server": "d64dbedb.b22df",
+        "service_domain": "notify",
+        "service": "ios_robs_iphone",
+        "data": "{   \"message\": \"Good Morning! Remember your meds!\",   \"data\": {     \"push\": {       \"badge\": 5,       \"category\": \"medicine\"     }   } }",
+        "mergecontext": "",
+        "x": 877.000114440918,
+        "y": 2449.9097862243652,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b0e74dd.4ec11b",
+        "type": "api-call-service",
+        "z": "5865e563.6af48c",
+        "name": "Turn off",
+        "server": "d64dbedb.b22df",
+        "service_domain": "input_boolean",
+        "service": "turn_off",
+        "data": "{   \"entity_id\": \"input_boolean.medicine_reminder\" }",
+        "mergecontext": "",
+        "x": 608.8637390136719,
+        "y": 2547.5465126037598,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "988a9a94.6a4da8",
+        "type": "hold",
+        "z": "5865e563.6af48c",
+        "name": "Hold until home",
+        "x": 653.5001449584961,
+        "y": 2633.4563121795654,
+        "wires": [
+            [
+                "23aa06e.ad7aefa",
+                "585cc179.2ed2f"
+            ]
+        ]
+    },
+    {
+        "id": "416ea963.517528",
+        "type": "change",
+        "z": "5865e563.6af48c",
+        "name": "trigger",
+        "rules": [
+            {
+                "t": "set",
+                "p": "trigger",
+                "pt": "msg",
+                "to": "true",
+                "tot": "bool"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 445.8637924194336,
+        "y": 2725.4566707611084,
+        "wires": [
+            [
+                "988a9a94.6a4da8"
+            ]
+        ]
+    },
+    {
+        "id": "b5f23735.cffc98",
+        "type": "server-state-changed",
+        "z": "5865e563.6af48c",
+        "name": "Rob Home",
+        "server": "d64dbedb.b22df",
+        "entityidfilter": "input_boolean.rob_home",
+        "entityidfiltertype": "substring",
+        "haltifstate": "off",
+        "x": 280.86373138427734,
+        "y": 2725.2748527526855,
+        "wires": [
+            [
+                "416ea963.517528"
+            ]
+        ]
+    },
+    {
+        "id": "23aa06e.ad7aefa",
+        "type": "change",
+        "z": "5865e563.6af48c",
+        "name": "false",
+        "rules": [
+            {
+                "t": "delete",
+                "p": "payload",
+                "pt": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 653.8637351989746,
+        "y": 2713.636800765991,
+        "wires": [
+            [
+                "988a9a94.6a4da8"
+            ]
+        ]
+    },
+    {
+        "id": "585cc179.2ed2f",
+        "type": "switch",
+        "z": "5865e563.6af48c",
+        "name": "",
+        "property": "payload.event.actionName",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "REMIND_HOME",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 793.0001029968262,
+        "y": 2547.8187046051025,
+        "wires": [
+            [
+                "d9727fb6.ab232"
+            ]
+        ]
+    },
+    {
+        "id": "d64dbedb.b22df",
+        "type": "server",
+        "z": "",
+        "name": "Home Assistant",
+        "url": "http://hassio/homeassistant",
+        "pass": "pass"
+    }
+]

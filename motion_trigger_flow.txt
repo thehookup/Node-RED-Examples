@@ -1,0 +1,149 @@
+[
+    {
+        "id": "80a6e306.bf39b",
+        "type": "api-call-service",
+        "z": "de6f2b80.6df1c8",
+        "name": "Bed Lights",
+        "server": "d64dbedb.b22df",
+        "service_domain": "light",
+        "service": "turn_on",
+        "data": "{   \"entity_id\": \"light.exercise_room_bed_leds\" }",
+        "mergecontext": "",
+        "x": 668.0001125335693,
+        "y": 3011.000066757202,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "41c7cf10.22002",
+        "type": "switch",
+        "z": "de6f2b80.6df1c8",
+        "name": "on or off",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "True",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "False",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 488.0001029968262,
+        "y": 3088.000069618225,
+        "wires": [
+            [
+                "80a6e306.bf39b",
+                "5ed282bd.0f80ec",
+                "fa81bdf4.7f385"
+            ],
+            [
+                "fa81bdf4.7f385"
+            ]
+        ]
+    },
+    {
+        "id": "5ed282bd.0f80ec",
+        "type": "api-call-service",
+        "z": "de6f2b80.6df1c8",
+        "name": "Bookcase Lights",
+        "server": "d64dbedb.b22df",
+        "service_domain": "light",
+        "service": "turn_on",
+        "data": "{   \"entity_id\": \"light.exercise_room_bookcase_leds\" }",
+        "mergecontext": "",
+        "x": 678.0001125335693,
+        "y": 3051.000066757202,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "557fd9d6.d3ba78",
+        "type": "server-state-changed",
+        "z": "de6f2b80.6df1c8",
+        "name": "Exercise Motion",
+        "server": "d64dbedb.b22df",
+        "entityidfilter": "sensor.shelly_motion",
+        "entityidfiltertype": "substring",
+        "haltifstate": "",
+        "x": 310.00008964538574,
+        "y": 3088.000068664551,
+        "wires": [
+            [
+                "41c7cf10.22002"
+            ]
+        ]
+    },
+    {
+        "id": "d3070933.4f33e8",
+        "type": "api-call-service",
+        "z": "de6f2b80.6df1c8",
+        "name": "Bed Lights",
+        "server": "d64dbedb.b22df",
+        "service_domain": "light",
+        "service": "turn_off",
+        "data": "{   \"entity_id\": \"light.exercise_room_bed_leds\" }",
+        "mergecontext": "",
+        "x": 705.0001125335693,
+        "y": 3138.0000705718994,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ca0740a7.2127e",
+        "type": "api-call-service",
+        "z": "de6f2b80.6df1c8",
+        "name": "Bookcase Lights",
+        "server": "d64dbedb.b22df",
+        "service_domain": "light",
+        "service": "turn_off",
+        "data": "{   \"entity_id\": \"light.exercise_room_bookcase_leds\" }",
+        "mergecontext": "",
+        "x": 715.0001125335693,
+        "y": 3178.0000705718994,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fa81bdf4.7f385",
+        "type": "trigger",
+        "z": "de6f2b80.6df1c8",
+        "op1": "",
+        "op2": "off",
+        "op1type": "nul",
+        "op2type": "str",
+        "duration": "15",
+        "extend": false,
+        "units": "s",
+        "reset": "on",
+        "bytopic": "all",
+        "name": "trigger",
+        "x": 547.0001049041748,
+        "y": 3163.0000705718994,
+        "wires": [
+            [
+                "d3070933.4f33e8",
+                "ca0740a7.2127e"
+            ]
+        ]
+    },
+    {
+        "id": "d64dbedb.b22df",
+        "type": "server",
+        "z": "",
+        "name": "Home Assistant",
+        "url": "http://hassio/homeassistant",
+        "pass": "pass"
+    }
+]
