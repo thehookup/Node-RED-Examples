@@ -1,0 +1,25 @@
+
+	// Context Storage
+	// The following property can be used to enable context storage. The configuration
+	// provided here will enable file-based context that flushes to disk every 30 seconds.
+	// Refer to the documentation for further options: https://nodered.org/docs/api/context/
+	//
+  
+  contextStorage: {
+  
+  // default node red contextStorage
+	//    default: {
+	//        module:"localfilesystem"
+	//    },
+  
+   // custom node red contextStorage with redis database
+		redis:{
+			module: require("node-red-context-redis"),
+			config:{
+				host:// host,
+				port:6379,
+				db:0,
+				password: //password,
+			}
+		}
+	},
